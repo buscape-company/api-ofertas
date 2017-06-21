@@ -317,7 +317,7 @@ Consulta as ofertas enviadas e seu status atual, se o \{SKU\} não for informado
 
 | Nome | Tipo | Obrigatório | Descrição |
 |---|---|---|---|
-|size|QueryString|Não|Determina a quantidade de ofertas que deve ser retornado por página. Default: 12 página e máximo 1000|
+|size|QueryString|Não|Determina a quantidade de ofertas que deve ser retornado por página. Default: 12 itens por página e máximo 1000|
 |page|QueryString|Não|Determina a página|
 |sku|PathVariable|Sim|Sku da oferta|
 
