@@ -65,13 +65,13 @@ Cria ou atualiza as ofertas no Buscapé. As ofertas podem ser enviadas em lotes 
 |groupId|	Não | Agrupador de ofertas (Deverá ser usado para agrupar variações diferentes de uma oferta </br> Exemplo: </br>Tenis xxx Branco (sku=100 - groupId=1) </br>Tenis xxx Preto  (sku=200 - groupId=1) </br>Tenis xxx Azul   (sku=300 - groupId=1) | String(10) |
 |sku| Sim |	ID da oferta | String(240) |
 |title | Sim | Título da oferta| String(240) |
-|barcode| Não | Código de barras da oferta | Integer |
+|barcode| Não | Código de barras da oferta | String |
 |category|	Sim | Categoria que a oferta se encontra </br>(Exemplo: Eletrônicos>TV) | String(255) |
 |declaredPrice| Não | Preço declarado para seguro dos correios | Double |
 |description| Sim |	Descrição/Sinopse da oferta, aceita tags HTML: &lt;p&gt;, &lt;br&gt;, &lt;b&gt;, &lt;strong&gt;, &lt;li&gt;, &lt;div&gt;, &lt;span&gt; </br> **Não serão aceitos script e/ou css inline, ou qualquer outra tag não listada acima** | String(255) |
 | Integer |
-|images[]| Sim | Lista de imagens da oferta  </br>**A primeira imagem da lista será a imagem exibida no Buscapé** | Array |
-|isbn| Não | Código ISBN para livros | Int |
+|images[]| Sim | Lista de imagens da oferta  </br>**A primeira imagem da lista será a imagem exibida no Buscapé** | Array<String(4094)> |
+|isbn| Não | Código ISBN para livros | Int(13) |
 |link| Sim | Link da oferta para o site Buscapé | String(4094) |
 |linkLomadee| Não | Link da oferta para os publishers da Lomadee | String(4094)|
 |prices[]| Sim | Lista de preços da oferta| Array |
