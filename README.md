@@ -308,8 +308,8 @@ Consulta as ofertas enviadas e seu status atual, se o \{SKU\} não for informado
 
 | Nome | Descrição |
 |---|---|
-| Endpoint | /product/t1/search |
-| Endpoint | /product/t1/search/**\{SKU\}** |
+| Endpoint | /product/search |
+| Endpoint | /product/search/**\{SKU\}** |
 | Method | GET |
 
 #### 1 - Parâmetros
