@@ -40,7 +40,8 @@ O formato padrão nas requisições e respostas das API é **JSON**
 
 ### Headers
 
-Todas as APIs deverão receber os headers abaixo
+#### Request
+Todos os requests nas APIs deverão receber os headers abaixo
 
 | Header |  Descrição |
 |---|---|
@@ -48,6 +49,13 @@ Todas as APIs deverão receber os headers abaixo
 | app-token | Token de aplicação |
 | auth-token | Token de autenticação |
 
+#### Response
+
+| Header |  Descrição |
+|---|---|
+| ticketid | Ticket de resposta referente a requisição |
+
+**ticketid** Será sempre retornado para os endpoints */collection* e */inventory*. Com este id é possível identificar com maiores detalhes o status do processamento da requisição 
 
 ### /collection
 
