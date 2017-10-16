@@ -76,7 +76,7 @@ Cria ou atualiza as ofertas no Buscapé. As ofertas podem ser enviadas em lotes 
 |barcode| Não | Código de barras da oferta | String |
 |category|	Sim | Categoria que a oferta se encontra </br>(Exemplo: Eletrônicos>TV) | String(255) |
 |declaredPrice| Não | Preço declarado para seguro dos correios | Double |
-|description| Sim |	Descrição/Sinopse da oferta, aceita tags HTML: &lt;p&gt;, &lt;br&gt;, &lt;b&gt;, &lt;strong&gt;, &lt;li&gt;, &lt;div&gt;, &lt;span&gt; </br> **Não serão aceitos script e/ou css inline, ou qualquer outra tag não listada acima** | String(255) |
+|description| Não |	Descrição/Sinopse da oferta, aceita tags HTML: &lt;p&gt;, &lt;br&gt;, &lt;b&gt;, &lt;strong&gt;, &lt;li&gt;, &lt;div&gt;, &lt;span&gt; </br> **Não serão aceitos script e/ou css inline, ou qualquer outra tag não listada acima** | String(4000) |
 |images[]| Sim | Lista de imagens da oferta  </br>**A primeira imagem da lista será a imagem exibida no Buscapé** | Array<String(4094)> |
 |isbn| Não | Código ISBN para livros | Int(13) |
 |link| Sim | Link da oferta para o site Buscapé | String(4094) |
