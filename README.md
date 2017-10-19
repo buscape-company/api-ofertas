@@ -89,7 +89,7 @@ Cria ou atualiza as ofertas no Buscapé. As ofertas podem ser enviadas em lotes 
 |prices[].installmentValue| Sim |	Valor da parcela  | Double |
 |prices[].installment|	Sim | Quantidade de parcelas | Int |
 |productAttributes|	Não | Características principais da oferta </br>Exemplo: Cor, Voltagem, Tamanho, etc | Map<Key,Value> |
-|technicalSpecification| Sim | Especificações técnicas da oferta </br> Exemplo: Tamanho da tela, tipo de material, marca, etc | Map<Key,Value> |
+|technicalSpecification| Sim | Especificações técnicas da oferta </br> Exemplo: Tamanho da tela, tipo de material, marca, etc | Map<Key,Value>(10000) |
 |quantity| Sim | Quantidade/Estoque da oferta | Int |
 |sizeHeight| Sim | Altura da oferta (cm)| Int |
 |sizeLength| Sim | Comprimento da oferta (cm)| Int |
