@@ -95,8 +95,8 @@ Cria ou atualiza as ofertas no Buscapé. As ofertas podem ser enviadas em lotes 
 |sizeLength| Sim | Comprimento da oferta (cm)| Int |
 |sizeWidth| Sim	| Largura da oferta (cm)| Int |
 |weightValue| Sim | Peso da oferta (gramas)| Double |
-|handlingTimeDays| Não | Tempo de manuseamento da oferta. Deve ser acrescido ao prazo de frete da oferta </br> Exemplo: Tempo necessário para encordoar uma raquete de tênis |marketplace| Não | Indica se essa oferta é vendida no modelo de marketplace| Boolean |
-|marketplace| Não	| Informa se a oferta pertece a uma loja do tipo Marketplace| Boolean |
+|handlingTimeDays| Não | Tempo de manuseamento da oferta. Deve ser acrescido ao prazo de frete da oferta </br> Exemplo: Tempo necessário para encordoar uma raquete de tênis | Int |
+|marketplace| Não | Indica se essa oferta é vendida no modelo de marketplace| Boolean |
 	
 #### Request
 
