@@ -207,15 +207,16 @@ Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Env
 | Nome | Obrigatório | Descrição | Tipo |
 |---|---|---|---|
 |sku| Sim |	ID da oferta | String(240) |
-|prices[]| Sim | Lista de preços da oferta| Array |
+|prices[]| Não | Lista de preços da oferta| Array |
 |prices[].type | Sim |	Tipo do preço, opções: </br>- boleto, cartao_avista</br>- cartao_parcelado_sem_juros</br>- cartao_parcelado_com_juros</br>**A oferta deverá conter ao menos 1 (um) preço à vista (cartao_avista) e ao menos 1 (um) preço parcelado** | String |
 |prices[].price |Sim| Preço da oferta para o Buscapé | Double |
 |prices[].priceCpa| Não| Preço da oferta para CPA| Double |
 |prices[].priceLomadee| Não | Preço da oferta para Lomadee | Double |
 |prices[].installmentValue| Sim |	Valor da parcela  | Double |
 |prices[].installment|	Sim | Quantidade de parcelas | Int |
-|quantity| Sim | Quantidade/Estoque da oferta | Int |
+|quantity| Não | Quantidade/Estoque da oferta | Int |
 
+<br/>*ao enviar uma atualização não é necessario os campos "price[]" e "quantity" serem enviados, apenas um dos dois é obrigatório*
 #### Request
 
 	[
