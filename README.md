@@ -195,7 +195,7 @@ Modelo de resposta de erro de formato inválido ou erro desconhecido
 
 ### /inventory
 
-Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Enviadas previamente pelo endpoint /collection)
+Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Enviadas previamente pelo endpoint /collection) e tambem é utilizado para remover ofertas do buscapé
 
 | Nome | Descrição |
 |---|---|
@@ -221,19 +221,7 @@ Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Env
 
 	[
 	    {
-	        "groupId": "",
-	        "sku": "",
-	        "title": "",
-	        "barcode": "",
-	        "category": "",
-	        "description": "",
-	        "images": [
-	            "url1",
-	            "url..."
-	        ],
-	        "isbn": "",
-	        "link": "",
-	        "linkLomadee": "",
+	        "sku": "",	        
 	        "prices": [
 	            {
 	                "type": "",
@@ -243,26 +231,13 @@ Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Env
 	                "installment": 0,
 	                "installmentValue": 0
 	            }
-	        ],
-	        "productAttributes": {
-	            "Atributo 1": "Valor 1",
-	            "Atributo ...": "Valor ..."
-	        },
-	        "technicalSpecification": {
-	            "Especificação 1": "Valor",
-	            "Especificação ...": "Valor ..."
-	        },
-	        "quantity": 0,
-	        "sizeHeight": 0,
-	        "sizeLength": 0,
-	        "sizeWidth": 0,
-	        "weightValue": 0,
-	        "declaredPrice": 0,
-	        "handlingTimeDays": 0,
-	        "marketplace": false,
-	        "marketplaceName": ""
+	        ]
+	        "quantity": 0
 	    }
 	]
+
+
+<br/> *Para remover uma oferta do buscapé basta enviar uma requisição no metodo inventory com "quantity": 0 para o buscapé*
 
 #### Response
 
