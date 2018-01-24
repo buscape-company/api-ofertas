@@ -59,7 +59,7 @@ Todos os requests nas APIs deverão receber os headers abaixo
 
 ### /collection
 
-Cria ou atualiza as ofertas no Buscapé. As ofertas podem ser enviadas em lotes (Lote máximo de 1000 ofertas por requisição)
+Cria ou atualiza as ofertas no Buscapé. As ofertas devem ser enviadas em lotes, como requisito para a homologação (Lote máximo de 1000 ofertas por requisição)
 
 | Nome | Descrição |
 |---|---|
@@ -82,13 +82,13 @@ Cria ou atualiza as ofertas no Buscapé. As ofertas podem ser enviadas em lotes 
 |link| Sim | Link da oferta para o site Buscapé | String(4094) |
 |linkLomadee| Não | Link da oferta para os publishers da Lomadee | String(4094)|
 |prices[]| Sim | Lista de preços da oferta| Array |
-|prices[].type | Sim |	Tipo do preço, opções: </br>- boleto, cartao_avista</br>- cartao_parcelado_sem_juros</br>- cartao_parcelado_com_juros</br>**A oferta deverá conter ao menos 1 (um) preço à vista (boleto ou cartao_avista) e ao menos 1 (um) preço parcelado** | String |
+|prices[].type | Sim |	Tipo do preço, opções: </br>- boleto, cartao_avista</br>- cartao_parcelado_sem_juros</br>- cartao_parcelado_com_juros</br>**A oferta deverá conter ao menos 1 (um) preço à vista (cartao_avista) e ao menos 1 (um) preço parcelado** | String |
 |prices[].price |Sim| Preço da oferta para o Buscapé | Double |
 |prices[].priceCpa| Não| Preço da oferta para CPA| Double |
 |prices[].priceLomadee| Não | Preço da oferta para Lomadee | Double |
 |prices[].installmentValue| Sim |	Valor da parcela  | Double |
 |prices[].installment|	Sim | Quantidade de parcelas | Int |
-|productAttributes|	Não | Características principais da oferta </br>Exemplo: Cor, Voltagem, Tamanho, etc | Map<Key,Value> |
+|productAttributes|	Não | Variações de uma da oferta </br>Exemplo: Cor, Voltagem, Tamanho, etc;<br/> iremos agrupar ofertas com as keys:<br/>"Cor"<br/>"Numeracao"<br/>"Tamanho"<br/>| Map<Key,Value> |
 |technicalSpecification| Sim | Especificações técnicas da oferta </br> Exemplo: Tamanho da tela, tipo de material, marca, etc | Map<Key,Value>(10000) |
 |quantity| Sim | Quantidade/Estoque da oferta | Int |
 |sizeHeight| Sim | Altura da oferta (cm)| Int |
@@ -195,7 +195,7 @@ Modelo de resposta de erro de formato inválido ou erro desconhecido
 
 ### /inventory
 
-Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Enviadas previamente pelo endpoint /collection)
+Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Enviadas previamente pelo endpoint /collection) e tambem é utilizado para remover ofertas do buscapé
 
 | Nome | Descrição |
 |---|---|
@@ -207,32 +207,21 @@ Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Env
 | Nome | Obrigatório | Descrição | Tipo |
 |---|---|---|---|
 |sku| Sim |	ID da oferta | String(240) |
-|prices[]| Sim | Lista de preços da oferta| Array |
-|prices[].type | Sim |	Tipo do preço, opções: </br>- boleto, cartao_avista</br>- cartao_parcelado_sem_juros</br>- cartao_parcelado_com_juros</br>**A oferta deverá conter ao menos 1 (um) preço à vista (boleto ou cartao_avista) e ao menos 1 (um) preço parcelado** | String |
+|prices[]| Não | Lista de preços da oferta| Array |
+|prices[].type | Sim |	Tipo do preço, opções: </br>- boleto, cartao_avista</br>- cartao_parcelado_sem_juros</br>- cartao_parcelado_com_juros</br>**A oferta deverá conter ao menos 1 (um) preço à vista (cartao_avista) e ao menos 1 (um) preço parcelado** | String |
 |prices[].price |Sim| Preço da oferta para o Buscapé | Double |
 |prices[].priceCpa| Não| Preço da oferta para CPA| Double |
 |prices[].priceLomadee| Não | Preço da oferta para Lomadee | Double |
 |prices[].installmentValue| Sim |	Valor da parcela  | Double |
 |prices[].installment|	Sim | Quantidade de parcelas | Int |
-|quantity| Sim | Quantidade/Estoque da oferta | Int |
+|quantity| Não | Quantidade/Estoque da oferta | Int |
 
+<br/>*ao enviar uma atualização não é necessario os campos "price[]" e "quantity" serem enviados, apenas um dos dois é obrigatório*
 #### Request
 
 	[
 	    {
-	        "groupId": "",
-	        "sku": "",
-	        "title": "",
-	        "barcode": "",
-	        "category": "",
-	        "description": "",
-	        "images": [
-	            "url1",
-	            "url..."
-	        ],
-	        "isbn": "",
-	        "link": "",
-	        "linkLomadee": "",
+	        "sku": "",	        
 	        "prices": [
 	            {
 	                "type": "",
@@ -242,26 +231,13 @@ Atualiza dados da quantidade e preço da oferta já cadastradas no Buscapé (Env
 	                "installment": 0,
 	                "installmentValue": 0
 	            }
-	        ],
-	        "productAttributes": {
-	            "Atributo 1": "Valor 1",
-	            "Atributo ...": "Valor ..."
-	        },
-	        "technicalSpecification": {
-	            "Especificação 1": "Valor",
-	            "Especificação ...": "Valor ..."
-	        },
-	        "quantity": 0,
-	        "sizeHeight": 0,
-	        "sizeLength": 0,
-	        "sizeWidth": 0,
-	        "weightValue": 0,
-	        "declaredPrice": 0,
-	        "handlingTimeDays": 0,
-	        "marketplace": false,
-	        "marketplaceName": ""
+	        ]
+	        "quantity": 0
 	    }
 	]
+
+
+<br/> *Para remover uma oferta do buscapé basta enviar uma requisição no metodo inventory com "quantity": 0 para o buscapé*
 
 #### Response
 
