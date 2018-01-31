@@ -449,3 +449,4 @@ Status code: **200**
 |57	|400|	Formato inválido do atributo image, deve ser um array de links de imagens. Exemplo: ["http://xxx.jpg","http://yyy.png"]|
 |58	|400|	Atributo technicalSpecification está inválido. Deverá ter formato map (Exemplo: {"atributo 1":"valor 1", "atributo 2":"valor 2"})|
 |59	|400|	Atributo productAttributes está inválido. Deverá ter formato map (Exemplo: {"atributo 1":"valor 1", "atributo 2":"valor 2"})|
+|60	|412|	Não podem haver valores de sku repetidos em uma mesma requisição. Essa requisição será descartada por questões de integridade.|
