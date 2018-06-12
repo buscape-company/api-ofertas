@@ -447,6 +447,6 @@ Status code: **200**
 |55	|400|	Atributos deliveryDate inválido. O atributos é obrigatório quando o status = delivered.|
 |56	|400|	O atributo status é obrigatório (SENT / DELIVERED / CANCELED).|
 |57	|400|	Formato inválido do atributo image, deve ser um array de links de imagens. Exemplo: ["http://xxx.jpg","http://yyy.png"]|
-|58	|400|	Atributo technicalSpecification está inválido. Deverá ter formato map (Exemplo: {"atributo 1":"valor 1", "atributo 2":"valor 2"})|
-|59	|400|	Atributo productAttributes está inválido. Deverá ter formato map (Exemplo: {"atributo 1":"valor 1", "atributo 2":"valor 2"})|
+|58	|400|	Atributo technicalSpecification está inválido. Tamanho máx. 10000 caracteres e deverá ter formato de objeto (Exemplo: { atributo1 : valor1, atributo2 : valor2}).)|
+|59	|400|	Atributo productAttributes está inválido. Tamanho máx. 10000 caracteres e deverá ter formato de objeto (Exemplo: { atributo1 : valor1, atributo2 : valor2}).)|
 |60	|412|	Não podem haver valores de sku repetidos em uma mesma requisição. Essa requisição será descartada por questões de integridade.|
