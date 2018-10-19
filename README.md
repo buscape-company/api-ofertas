@@ -450,3 +450,4 @@ Status code: **200**
 |58	|400|	Atributo technicalSpecification está inválido. Deverá ter formato map (Exemplo: {"atributo 1":"valor 1", "atributo 2":"valor 2"})|
 |59	|400|	Atributo productAttributes está inválido. Deverá ter formato map (Exemplo: {"atributo 1":"valor 1", "atributo 2":"valor 2"})|
 |60	|412|	Não podem haver valores de sku repetidos em uma mesma requisição. Essa requisição será descartada por questões de integridade.|
+|61	|400|	Atributo isbn inválido. O atributo deve ter tamanho máx. 13 caracteres.|
