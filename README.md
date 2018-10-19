@@ -451,3 +451,4 @@ Status code: **200**
 |59	|400|	Atributo productAttributes está inválido. Tamanho máx. 10000 caracteres e deverá ter formato de objeto (Exemplo: { atributo1 : valor1, atributo2 : valor2}).)|
 |60	|412|	Não podem haver valores de sku repetidos em uma mesma requisição. Essa requisição será descartada por questões de integridade.|
 |61	|400|	Atributo groupId está inválido. Limite máximo de 10 caracteres.|
+|62	|400|	Atributo isbn inválido. O atributo deve ter tamanho máx. 13 caracteres.|
